@@ -1,0 +1,65 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:vm="using:MyApplicationMVVMDev.ViewModels" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" x:Class="MyApplicationMVVMDev.Views.MainWindow" Icon="/Assets/avalonia-logo.ico" Title="MyApplicationMVVMDev">
+  <Design.DataContext>
+    <vm:MainWindowViewModel/>
+  </Design.DataContext>
+  <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+    <ScrollViewer>
+      <Grid>
+        <StackPanel Orientation="Vertical">
+          <Grid VerticalAlignment="Top" x:Name="MyHeaderGrid" Height="200">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="auto"/>
+              <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Margin="20">
+              <Ellipse Fill="Gray" Width="160" Height="160" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            </Grid>
+            <Grid Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+              <StackPanel Margin="0,0,20,0" Orientation="Vertical">
+                <StackPanel Margin="10,0,0,0" Orientation="Horizontal">
+                  <TextBlock x:Name="nameTxt" Margin="0" FontSize="30" Foreground="Black" Text="Binding Name"/>
+                  <TextBlock x:Name="surnameTxt" Margin="5,0,0,0" FontSize="30" Foreground="Black" Text="Name"/>
+                </StackPanel>
+                <StackPanel Margin="10,0,0,0" Orientation="Horizontal">
+                  <TextBlock x:Name="PositionTxt" Margin="0,0,0,0" FontSize="14" Foreground="Black" Text="Email"/>
+                  <TextBlock Margin="10,0,0,0" FontSize="14" Foreground="Black" Text="{Binding Phone}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                  <TextBlock Margin="10,0,0,0" FontSize="14" Foreground="Black" Text="Кол-во кварталов:"/>
+                  <TextBlock Margin="10,0,0,0" FontFamily="Segoe UI" FontSize="14" Foreground="Black" Text="Binding CountKv"/>
+                  <TextBlock Margin="10,0,0,0" FontSize="14" Foreground="Black" Text="Кол-во выделов:"/>
+                  <TextBlock Margin="10,0,0,0" FontSize="14" Foreground="Black" Text="CountVd"/>
+                  <TextBlock Margin="10,0,0,0" FontSize="14" Foreground="Black" Text="Общая площадь:"/>
+                  <TextBlock Margin="10,0,0,0" FontSize="14" Foreground="Black" Text="Binding CountArea"/>
+                </StackPanel>
+                <Grid>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="300"></ColumnDefinition>
+                  </Grid.ColumnDefinitions>
+                  <StackPanel Orientation="Horizontal">
+                    <Button Content="Text"/>
+                    <Separator/>
+                    <Button Content="Text"/>
+                    <Button Content="Text"/>
+                    <Button Content="Text"/>
+                  </StackPanel>
+                  <RelativePanel Grid.Column="1" VerticalAlignment="Center">
+                    <ComboBox x:Name="sortCbox" PlaceholderText="Фильтр"/>
+                    <AutoCompleteBox x:Name="controlsSearchBox" RelativePanel.RightOf="sortCbox"></AutoCompleteBox>
+                  </RelativePanel>
+                </Grid>
+              </StackPanel>
+            </Grid>
+          </Grid>
+          <Grid>
+            <StackPanel>
+              <TextBlock Margin="0,15,20,0" FontSize="20">Кварталы</TextBlock>
+              <TextBlock>frewgrw</TextBlock>
+            </StackPanel>
+          </Grid>
+        </StackPanel>
+      </Grid>
+    </ScrollViewer>
+  </Grid>
+</Window>
